@@ -6,7 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.FragmentComponent
 
 
-@InstallIn(FragmentComponent::class)
-@AssistedModule// cho phep dagger 2 create factory
-@Module(includes = [AssistedInject_AssistedInjectModule::class])
-interface AssistedInjectModule
+//@InstallIn(FragmentComponent::class)
+//@AssistedModule// cho phep dagger 2 create factory
+//@Module(includes = [AssistedInject_AssistedInjectModule::class])
+//interface AssistedInjectModule

@@ -8,17 +8,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 interface AppApi {
 
     companion object {
-        fun create(): AppApi {
-            val logger =
-                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
-
-            val client = OkHttpClient.Builder()
-                .addInterceptor(logger)
-                .build()
-
+        fun create(okHttpClient: OkHttpClient, BASE_URL: String): AppApi {
             return Retrofit.Builder()
-                .baseUrl("BASE_URL")
-                .client(client)
+                .baseUrl(BASE_URL)
+                .client(okHttpClient)
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build()
                 .create(AppApi::class.java)

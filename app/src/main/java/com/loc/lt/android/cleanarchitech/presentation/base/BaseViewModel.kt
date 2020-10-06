@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class BaseViewModel : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
     private val _isProgress: MutableLiveData<Boolean> by lazy {
         MutableLiveData(false)
     }
